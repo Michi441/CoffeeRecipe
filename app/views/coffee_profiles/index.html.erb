@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Coffee Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coffee_profiles.each do |coffee_profile| %>
+      <tr>
+        <td><%= coffee_profile.title %></td>
+        <td><%= coffee_profile.description %></td>
+        <td><%= link_to 'Show', coffee_profile %></td>
+        <td><%= link_to 'Edit', edit_coffee_profile_path(coffee_profile) %></td>
+        <td><%= link_to 'Destroy', coffee_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coffee Profile', new_coffee_profile_path %>

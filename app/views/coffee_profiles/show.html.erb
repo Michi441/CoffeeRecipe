@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @coffee_profile.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @coffee_profile.description %>
+</p>
+
+ <div class="field">
+    <%= form_for ([@coffee_profile, Recipe.new]) do |f|%>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :instruction %>
+      <%= f.text_field :instruction%>
+    <%= f.submit "Add Recipe" %>
+    <% end %>
+  </div>
+
+
+  <% @coffee_profile.recipes.each do|recipe|%>
+    <h3>
+      <%= recipe.title %>
+    </h3>
+
+    <h5>
+          <%= recipe.instruction%>
+
+    </h5>
+
+  <% end %>
+
+<%= link_to 'Edit', edit_coffee_profile_path(@coffee_profile) %> |
+<%= link_to 'Back', coffee_profiles_path %>

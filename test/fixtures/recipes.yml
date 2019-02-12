@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  instruction: MyString
+  coffee_profile: one
+
+two:
+  title: MyString
+  instruction: MyString
+  coffee_profile: two
